@@ -180,7 +180,7 @@ function Quiz() {
   const [picked, setPicked] = useState<number | null>(null);
   const [score, setScore] = useState(0);
   const done = i >= questions.length;
-  const q = questions[i];
+  const q = questions[Math.min(i, questions.length - 1)]!;
 
   const choose = (idx: number) => {
     if (picked !== null) return;
